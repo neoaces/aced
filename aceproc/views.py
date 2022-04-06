@@ -20,7 +20,7 @@ class CardView(viewsets.ModelViewSet):
     # Serializer_class = serializer from serializer.py
     # Queryset = the model to take the data from
     serializer_class = CardSerializer
-    queryset = Card.objects.all()
+    queryset = CardSet.objects.all()
 # class CardDetailView(generic.DetailView):
 #     # Takes in the model, and passes it into the view
 #     model = Card
