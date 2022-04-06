@@ -19,5 +19,5 @@ from . import views
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('<int:cardset_id>/', views.CardView, name='detail')
+    # path('<int:cardset_id>/', views.CardView.as_view(), name='detail')
 ]

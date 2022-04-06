@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rest_framework import routers
+from aceproc import views
+
+router = routers.DefaultRouter()
+router.register(r'cards', views.CardView, 'cards')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cards/', include('aceproc.urls'))
+    path('cards/', include('aceproc.urls')),
+    # Add the rest framework router into the urlconf.
+    path('main/', include(router.urls))
 ]
