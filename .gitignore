@@ -3,3 +3,4 @@ manage.py
 .env
 *.pyc
 .vscode/settings.json
+/node_modules
