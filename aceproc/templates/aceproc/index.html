@@ -1,0 +1,7 @@
+{% if set_list %}
+    {% for cardset in set_list %}
+        <li><a href={% url 'detail' cardset.id %}>{{cardset.set_title}}</a></li>
+    {% endfor %}
+{% else %}
+<p>No card sets found.</p>
+{% endif %}

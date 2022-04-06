@@ -1,0 +1,10 @@
+{% if Cardset %}
+<ul>
+  {% for card in Cardset.card_set.all %} {# Note how the .all() does not have parentheses; invoked when the view is portrayed. #}
+  <li><p>{{card.question_text}}, {{card.answer_text}}</p></li>
+  {% endfor %}
+</ul>
+
+{% else %}
+<p>Nothing found.</p>
+{% endif %}
