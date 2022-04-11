@@ -2,7 +2,7 @@
 from django.views import generic
 from rest_framework import viewsets
 from .models import Card, CardSet
-from .serializers import CardSerializer
+from .serializers import CardSerializer, CardSetSerializer
 
 
 # Create your views here.
@@ -15,12 +15,18 @@ class IndexView(generic.ListView):
         return CardSet.objects.order_by('-pub_date')[:5]
 
 
+# TODO: Implement the filtering of cards here, not in JS
 class CardView(viewsets.ModelViewSet):
     # Two variables are made for REST:
     # Serializer_class = serializer from serializer.py
     # Queryset = the model to take the data from
     serializer_class = CardSerializer
     queryset = Card.objects.all()
+    
+class CardSetView(viewsets.ModelViewSet):
+    serializer_class = CardSetSerializer
+    queryset = CardSet.objects.all()
+
 # class CardDetailView(generic.DetailView):
 #     # Takes in the model, and passes it into the view
 #     model = Card
